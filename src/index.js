@@ -1,16 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import WrapperComponent from './components/WrapperComponent';
-
-import { createStore } from 'redux';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import rootReducer from './reducers';
+import App from './components/App';
+
+// import WrapperComponent from './components/WrapperComponent';
 
 const store = createStore(rootReducer);
 
-ReactDOM.render(
+render(
     <Provider store={store}>
-        <WrapperComponent />
+        <App />
     </Provider>,
-    document.getElementById('app'));
+    document.getElementById('root'));
 
