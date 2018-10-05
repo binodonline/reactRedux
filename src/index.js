@@ -1,16 +1,10 @@
+import 'babel-polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import WrapperComponent from './components/WrapperComponent';
+import { render } from 'react-dom';
+import Root from './containers/Root';
 
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import rootReducer from './reducers';
-
-const store = createStore(rootReducer);
-
-ReactDOM.render(
-    <Provider store={store}>
-        <WrapperComponent />
-    </Provider>,
-    document.getElementById('app'));
+render(
+    <Root />,
+    document.getElementById('app')
+    );
 
